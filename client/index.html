@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>chess</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="client/board.css">
+</head>
+</head>
+<body>
+<div style="height:150px">
+    <div class="w3-container left">
+        <h1 id="uid"></h1>
+    <h1 id="turn"></h1>
+    </div>
+    <div class="w3-container right">
+        <h3>Player List: </h3>
+        <select id="player_list" name="player_list" size="0" multiple></select>
+        <!---<div id="player_list" style="height:120px;width:200px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;"></div>  --->
+        
+    </div> 
+</div>
+<div id="board">
+    <div id="red-win" class="win" style="visibility: hidden">
+        <h1 class="w3-center" style="color:red;">Red win</h1>
+    </div>
+    <div id="black-win" class="win" style="visibility: hidden">
+        <h1 class="w3-center">Black win</h1>
+    </div>
+    <div class="board-row">
+        <div id="board00" class="empty-light"></div>
+        <div id="board01" class="empty"></div>
+        <div id="board02" class="empty"></div>
+        <div id="board03" class="empty"></div>
+        <div id="board04" class="empty"></div>
+        <div id="board05" class="empty"></div>
+        <div id="board06" class="empty"></div>
+        <div id="board07" class="empty"></div>
+    </div>
+    <div class="board-row">
+        <div id="board10" class="empty-light"></div>
+        <div id="board11" class="empty"></div>
+        <div id="board12" class="empty"></div>
+        <div id="board13" class="empty"></div>
+        <div id="board14" class="empty"></div>
+        <div id="board15" class="empty"></div>
+        <div id="board16" class="empty"></div>
+        <div id="board17" class="empty"></div>
+    </div>
+    <div class="board-row">
+        <div id="board20" class="empty-light"></div>
+        <div id="board21" class="empty"></div>
+        <div id="board22" class="empty"></div>
+        <div id="board23" class="empty"></div>
+        <div id="board24" class="empty"></div>
+        <div id="board25" class="empty"></div>
+        <div id="board26" class="empty"></div>
+        <div id="board27" class="empty"></div>
+    </div>
+    <div class="board-row">
+        <div id="board30" class="empty-light"></div>
+        <div id="board31" class="empty"></div>
+        <div id="board32" class="empty"></div>
+        <div id="board33" class="empty"></div>
+        <div id="board34" class="empty"></div>
+        <div id="board35" class="empty"></div>
+        <div id="board36" class="empty"></div>
+        <div id="board37" class="empty"></div>
+    </div>
+</div>
+
+<div class=""></div>
+<div class="w3-container w3-right">
+    <h3>Chat</h3>
+    <div id="chat" style="height:120px;width:500px;border:1px solid #ccc;display: flex;
+    flex-direction: column-reverse;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+    </div>
+    <form id="chat_form" >
+        <input type="text" style="width:440px;" id="chat_input" name="chat_input" required>
+        <input type="submit" value="enter">
+    </form>
+</div>
+
+<script src="https://cdn.socket.io/socket.io-3.0.5.js">
+</script>
+<script>
+    var cell_size=120;
+    var self_id=0;
+    var socket = io();
+    
+
+    function update_new(r,c){
+        var move=r*8+c;
+        socket.emit('update',move);
+    }
+
+    function update(e){
+        const target = document.getElementById("board");
+        const rect = target.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+
+        if (x>=0&&x<=960&&y>=0&&y<=480){    
+            var r=(y- y%cell_size)/cell_size;
+            var c=(x- x%cell_size)/cell_size;
+            var move=r*8+c;
+            socket.emit('update',move);
+        }
+    }
+    
+    function warn(coor){
+        var rr=Math.ceil((coor+1)/8)-1;
+        var cc=(coor)%8;
+        if (rr>=0 && cc>=0){
+            document.getElementById("board"+rr+cc).className+="-light";
+        }
+    }
+
+    document.getElementById("chat_form").onsubmit=function(e){
+        e.preventDefault();
+        socket.emit("chat_send",self_id+": "+document.getElementById("chat_input").value);
+        document.getElementById("chat_input").value="";
+        
+    }
+
+    function chess_show(data){
+        for (var r=0;r<4;r++){
+            for (var c=0;c<8;c++){
+                if (data[r*8+c]!="blank"){                 
+                    document.getElementById("board"+r+c).className=data[r*8+c];
+                } else{
+                    document.getElementById("board"+r+c).className="blank";
+                }
+            }
+        }
+    }
+
+    socket.on('board',function(data){        
+        chess_show(data);
+    });
+
+    socket.on('light',function(data){
+        warn(data);
+    });
+    
+    socket.on('info',function(data){
+        if (data==1){
+            document.getElementById("uid").innerHTML="Side: red";
+            document.getElementById("uid").style.color = "#ff0000";
+            self_id="Red side";
+        } else if (data==2){
+            document.getElementById("uid").innerHTML="Side: black";
+            document.getElementById("uid").style.color = "#000000";
+            self_id="Black side";
+        } else {
+            document.getElementById("uid").innerHTML="Side: audience";
+            document.getElementById("uid").style.color = "#b942f5";
+            self_id="Audience "+(data-2);
+        }
+        
+        
+    });
+
+    socket.on('move',function(data){
+        document.getElementById("board").addEventListener("click", update);
+
+    });
+    socket.on('stop',function(data){
+        document.getElementById("board").removeEventListener("click", update);
+        
+    });
+    socket.on('turn',function(data){
+        if (data==1){
+            document.getElementById("turn").innerHTML="turn: red";
+            document.getElementById("turn").style.color = "#ff0000";
+        } else {
+            document.getElementById("turn").innerHTML="turn: black";
+            document.getElementById("turn").style.color = "#000000";
+        }
+        
+        
+    });
+    socket.on('reset_win',function(data){
+        if (data==false){
+            document.getElementById("red-win").style.visibility = "hidden";
+            document.getElementById("black-win").style.visibility = "hidden";
+        } else if (document.getElementById("turn").innerHTML=="turn: black"){
+            document.getElementById("black-win").style.visibility = "visible";
+        } else{
+            document.getElementById("red-win").style.visibility = "visible";
+        }
+    });
+    socket.on('win',function(data){
+        document.getElementById("board").removeEventListener("click", update);
+
+        if (data=="Red"){
+            document.getElementById("red-win").style.visibility = "visible";
+        } else {
+            document.getElementById("black-win").style.visibility = "visible";
+        }
+
+        
+    });
+
+    socket.on('player_join',function(data){
+        if (data==1){
+            data="Red side " + "joined the game.<br>";
+        } else if (data==2){
+            data="Black side " + "joined the game.<br>";
+        } else {
+            data="Audience "+ (data-2) + " joined the game.<br>"
+        }
+        document.getElementById("chat").innerHTML+=data;
+        
+    });
+
+    socket.on('player_leave',function(data){
+        if (data==1){
+            data="Red side " + "left the game.<br>";
+        } else if (data==2){
+            data="Black side " + "left the game.<br>";
+        } else {
+            data="Audience "+ (data-2) + " left the game.<br>"
+        }
+        document.getElementById("chat").innerHTML+=data;
+        
+    });
+    socket.on('player_list',function(data){
+        document.getElementById("player_list").innerHTML="";
+        document.getElementById("player_list").size=0;
+        for (var i in data){
+            if (document.getElementById("player_list").size<9){
+                document.getElementById("player_list").size+=1;
+            }
+            if (data[i].id==1){
+                output="<option value="+data[i].id+">Red side</option>";
+            } else if (data[i].id==2){
+                output="<option value="+data[i].id+">Black side</option>";
+            } else {
+                output="<option value="+data[i].id+">Audience "+ (data[i].id-2) + "</option>"
+            }
+            document.getElementById("player_list").innerHTML+=output;
+        }
+    });
+
+    socket.on('chat_print',function(data){
+        document.getElementById("chat").innerHTML+=data+"<br>";  
+    });
+   
+</script>
+</body>
+</html>

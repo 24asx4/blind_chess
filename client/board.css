@@ -1,0 +1,519 @@
+.blank{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    padding: 0px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.empty-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/empty.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.empty{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/empty.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.red_king-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_king.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.red_king{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_king.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.red_car-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_car.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.red_car{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_car.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.red_horse-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_horse.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.red_horse{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_horse.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.red_cannon-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_cannon.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.red_cannon{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_cannon.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.red_knight-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_knight.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.red_knight{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_knight.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.red_elephant-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_elephant.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.red_elephant{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_elephant.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.red_soldier-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_soldier.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.red_soldier{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/red_soldier.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.black_king-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_king.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.black_king{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_king.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.black_car-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_car.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.black_car{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_car.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.black_horse-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_horse.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.black_horse{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_horse.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.black_cannon-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_cannon.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.black_cannon{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_cannon.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.black_knight-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_knight.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.black_knight{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_knight.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.black_elephant-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_elephant.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.black_elephant{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_elephant.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+.black_soldier-light{
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_soldier.svg) center, url(img/light.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 0px;
+    background-size: 80px 80px, 120px 120px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+}
+.black_soldier{
+    
+    display: block;
+    text-indent: -9999px;
+    width: 120px;
+    height: 120px;
+    background: url(img/black_soldier.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding: 20px;
+    background-size: 80px 80px;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+
+
+}
+
+.win{
+    width: 240px;
+    height: 120px;
+    left:360px;
+    top:180px;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(28, 102, 28, 1);
+    
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.board-row{
+    width: 960px;
+    
+}
+#board{
+    width: 960px;
+    position: relative;
+    margin: auto;
+
+}
